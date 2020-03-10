@@ -3,15 +3,15 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    You are logged in!
-                </div>
-            </div>
-        </div>
+        <h4>Lista de Chamados</h4>
+        
+        @forelse($chamados as $key => $value)
+            @can('ver-chamado', $value)
+            <a class="btn btn-primary btn-rounded" target="_self" href="/home/{{$value->id}}">{{$value->titulo}}</a>
+            @endcan
+        @empty
+            <b>Nâo existem chamados!</b>
+        @endforelse
     </div>
 </div>
 @endsection
