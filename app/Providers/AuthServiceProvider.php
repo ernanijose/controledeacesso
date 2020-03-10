@@ -16,7 +16,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         'App\Model' => 'App\Policies\ModelPolicy',
-        'App\Chamado' => 'App\Policies\ChamadoPolicy',
+        //'App\Chamado' => 'App\Policies\ChamadoPolicy',
+        'App\Chamado' => 'App\Policies\ChamadoTestePolicy',
     ];
 
     /**

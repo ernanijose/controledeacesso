@@ -6,7 +6,7 @@
         <h4>Lista de Chamados</h4>
         
         @forelse($chamados as $key => $value)
-            @can('ver-chamado', $value)
+            @can('view', $value)
             <a class="btn btn-primary btn-rounded" target="_self" href="/home/{{$value->id}}">{{$value->titulo}}</a>
             @endcan
         @empty
