@@ -10,6 +10,13 @@ class ChamadoTestePolicy
 {
     use HandlesAuthorization;
 
+    /*public function before($user, $ability)
+    {
+        if($user->eAdmin()){
+            return true;
+        }
+    }*/
+
     /**
      * Determine whether the user can view the chamado.
      *
@@ -30,7 +37,7 @@ class ChamadoTestePolicy
      */
     public function create(User $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -42,7 +49,7 @@ class ChamadoTestePolicy
      */
     public function update(User $user, Chamado $chamado)
     {
-        //
+        return $user->id == $chamado->user_id;
     }
 
     /**
@@ -54,6 +61,6 @@ class ChamadoTestePolicy
      */
     public function delete(User $user, Chamado $chamado)
     {
-        //
+        return $user->id == $chamado->user_id;
     }
 }
